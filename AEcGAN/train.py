@@ -209,12 +209,12 @@ def process_test_data(generators_tuple, test_data_tuple, save_path):
     outputs = get_generator_outputs(netG_B, netG_A, test_B)
     fake_output, rec_input = outputs
     df_fake_output = pd.DataFrame(fake_output).T
-    df_fake_output.to_csv('../.csv')
+    df_fake_output.to_csv('../outdataB.csv')
 
     outputs = get_generator_outputs(netG_A, netG_B, test_A)
     fake_output, rec_input = outputs
     df_fake_output = pd.DataFrame(fake_output).T
-    df_fake_output.to_csv('../.csv')
+    df_fake_output.to_csv('outdataA/.csv')
 
 
 def get_networks_params(input_shape, use_dropout, use_batch_norm, use_leaky_relu, use_wgan):
