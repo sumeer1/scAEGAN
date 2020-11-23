@@ -8,7 +8,9 @@ keras==2.1.0
 
 # Basic Usage
 Training the cyclegan on latent representations can be perfomed by running
-#
+
+```
 python cGANtrain.py
+```
 
 with training parameters
