@@ -6,8 +6,9 @@ tensorflow==1.14.0
 keras==2.1.0
 
 
-# Basic Use
+# Basic Usage
 Training the cyclegan on latent representations can be perfomed by running
+#
 python cGANtrain.py
 
 with training parameters
