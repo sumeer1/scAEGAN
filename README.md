@@ -1,5 +1,5 @@
 # scAEGAN
-scAEGAN- Data integration by learning non-linear mappings between distinct latent spaces while respecting different technologies, data-modalities, and experimental samples
+scAEGAN- Unification of Single-Cell Genomics Data by Adversarial Learning of Latent Space Correspondences 
 
 # Requirements
 ```
