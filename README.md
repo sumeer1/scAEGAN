@@ -10,11 +10,15 @@ keras==2.1.0
 # Required libraries for evaluation
 ```
 Seurat
+clusteval
 scclusteval
 pheatmap
 ggplot2
 cowplot
 pdfCluster
+cluster
+umap
+Rtsne
 
 ```
 # Basic Usage
