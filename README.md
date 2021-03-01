@@ -32,7 +32,7 @@ There are two steps for the basic usage
 ```
 python AE.py
 ```
-3.Training the cyclegan on latent representations obtained from the Autoencoder by running
+2.Training the cyclegan on latent representations obtained from the Autoencoder by running
 
 ```
 python cGANtrain.py
