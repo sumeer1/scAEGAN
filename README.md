@@ -27,7 +27,12 @@ Rtsne
 
 ```
 # Basic Usage
-Training the cyclegan on latent representations can be perfomed by running
+There are two steps for the basic usage 
+1. Training the autoencoder to get the latent representation by running
+```
+python cGANtrain.py
+```
+3.Training the cyclegan on latent representations obtained from the Autoencoder by running
 
 ```
 python cGANtrain.py
