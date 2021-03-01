@@ -30,7 +30,7 @@ Rtsne
 There are two steps for the basic usage 
 1. Training the autoencoder to get the latent representation by running
 ```
-python cGANtrain.py
+python AE.py
 ```
 3.Training the cyclegan on latent representations obtained from the Autoencoder by running
 
