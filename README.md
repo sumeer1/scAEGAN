@@ -8,12 +8,11 @@ This repository contains the online data and scAEGAN code to analyze and visuali
 
 # Required libraries for scAEGAN
 ```
-The required libraries are inlcuded in environment.yml file. 
-In order to install these libraries, follow the following steps:
+The required libraries are inlcuded in environment.yml file. In order to install these libraries, follow the following steps:
 
 1. Creating the conda environment. 
-This will install the libraries included in the environment.yml file for training the scAEGAN.
-       conda env create --prefix ./env --file environment.yml --force
+      - This will install the libraries included in the environment.yml file for training the scAEGAN.
+        conda env create --prefix ./env --file environment.yml --force
 
 2. The second step is to activate the conda envirnoment. 
        conda activate ./env
