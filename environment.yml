@@ -1,0 +1,17 @@
+
+name: tensorflow-env
+
+channels:
+ - conda-forge
+ - defaults
+
+dependencies:
+ - pip
+ - tensorflow=1.4.0
+ - keras=2.1.5
+ - python
+ - pandas
+ - scikit-learn
+ - matplotlib
+ - umap-learn
+
