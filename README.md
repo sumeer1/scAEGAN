@@ -42,7 +42,6 @@ python AE.py
 2.Training the cyclegan on latent representations obtained from the Autoencoder by running
 
 ```
-python cGANtrain.py
+python cGANtrain.py --data_path --train_file --test_file --save_path --input_shape --batch_size --epochs
 ```
 
-with given training parameters
