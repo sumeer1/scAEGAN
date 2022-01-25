@@ -37,7 +37,7 @@ Rtsne
 There are two steps for the basic usage after activating the conda environment.
 1. Training the autoencoder with the given parameters to get the latent representation by running
 ```
-python AE.py python --input_file --output_file  --batch_size  --epochs --dropout --learning_rate
+python AE.py --input_file --output_file  --batch_size  --epochs --dropout --learning_rate
 ```
 2.Training the cyclegan with the given parameters on latent representations obtained from the Autoencoder by running
 
