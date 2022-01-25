@@ -2,7 +2,7 @@
 This repository contains the online data and scAEGAN code to analyze and visualize multi-omics integration analysis, and it's downstream analysis outputs. Metrics are also available for quantifying outputs quality.
 
 # scAEGAN Workflow
-<img width="871" alt="scAEGAN" src="https://user-images.githubusercontent.com/70262340/150943645-e7b14cfa-7885-4480-a198-428619fc8136.PNG">
+<img width="873" alt="scAEGAN" src="https://user-images.githubusercontent.com/70262340/150944062-c9c72e62-ee8b-41f2-8d97-8d7e8711529a.PNG">
 
 
 
