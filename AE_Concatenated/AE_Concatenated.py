@@ -70,7 +70,7 @@ plt.legend(['Train','Validation'], loc = 'upper right')
 plt.show()
 
 encoder = Model(input = [input_dim_scRNAseq1, input_dim_scRNAseq2], output = bottleneck)
-bottleneck_representation = encoder.predict([X_scRNAseq1, scRNAseq2])
+bottleneck_representation = encoder.predict([X_scRNAseq1, X_scRNAseq2])
 print(pd.DataFrame(bottleneck_representation).shape)
 print(pd.DataFrame(bottleneck_representation).iloc[0:5,0:5])
 
