@@ -21,7 +21,7 @@ The required libraries are inlcuded in environment.yml file. In order to install
 ```
 # Required libraries for evaluation
 
-To evaluation with the scripts in the Analysis folder on the scAEGAN generated data following libraries are required: 
+* To evaluate with the given scripts in the Analysis folder on the scAEGAN generated data following libraries are required: 
 ```
 Seurat
 clusteval
