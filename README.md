@@ -52,4 +52,4 @@ python cGANtrain.py --data_path --train_file --test_file --save_path --input_sha
 ```
 
 # Evaluation
-For evaluation, jupyter notebook is given as as example how to run the evaluation on the output from cyclegan.
+* For evaluation, jupyter notebook is given as as example how to run the evaluation on the output from cyclegan.
