@@ -39,7 +39,7 @@ Rtsne
 ```
 # Basic Usage
 There are two steps for the basic usage after activating the conda environment.
-*  Training the autoencoder with the given parameters to get the latent representation by running. 
+*  Training the autoencoder with the given parameters to get the latent representation by running. The input to the autoencoder is in the format of cell by gene matrix
 *  The input to the autoencoder is in the format of cell by gene matrix. With cells as rows and genes as columns in csv format.
 ```
 python AE.py --input_file --output_file  --batch_size  --epochs --dropout --learning_rate
