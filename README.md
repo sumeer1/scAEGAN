@@ -45,11 +45,11 @@ There are two steps for the basic usage after activating the conda environment.
 python AE.py --input_file --output_file  --batch_size  --epochs --dropout --learning_rate
 ```
 *  Training the cyclegan with the given parameters on latent representations obtained from the Autoencoder by running.
-* * The input to the cyclegan is aslo in the format of cell by gene matrix.With cells as rows and genes as columns in csv format
+   * The input to the cyclegan is aslo in the format of cell by gene matrix.With cells as rows and genes as columns in csv format
 
 ```
 python cGANtrain.py --data_path --train_file --test_file --save_path --input_shape --batch_size --epochs
 ```
 
 # Evaluation
-For evaluation,jupyter notebook is given as as example how to run the evaluation on the output from cyclegan.
+For evaluation, jupyter notebook is given as as example how to run the evaluation on the output from cyclegan.
