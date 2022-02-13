@@ -13,6 +13,7 @@ from keras.optimizers import Adam
 from sklearn.decomposition import PCA
 from keras.models import Sequential, Model
 from keras import regularizers
+from keras.callbacks import EarlyStopping
 import warnings
 warnings.filterwarnings('ignore')
 import argparse
@@ -39,8 +40,8 @@ model.add(Dense(300,     activation = 'relu'))
 model.add(Dense(X.shape[1],   activation = 'sigmoid'))
 model.compile(loss = 'mean_squared_error', optimizer = Adam(lr=args.learning_rate))
 model.summary()
-
-history = model.fit(X, X, batch_size = args.batch_size, epochs = args.epochs, shuffle = True, verbose = 1, validation_split = args.validation_split)
+es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=20)
+history = model.fit(X, X, batch_size = args.batch_size, epochs = args.epochs, shuffle = True, verbose = 1, validation_split = args.validation_split, callbacks=[es])
 print("\n" + "Training Accuracy: ", history.history['loss'][-1])
 print("Validation Accuracy: ", history.history['val_loss'][-1], "\n")
 plt.plot(history.history['loss'])
