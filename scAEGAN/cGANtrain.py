@@ -209,12 +209,12 @@ def process_test_data(generators_tuple, test_data_tuple, save_path):
     outputs = get_generator_outputs(netG_B, netG_A, test_B)
     fake_output, rec_input = outputs
     df_fake_output = pd.DataFrame(fake_output).T
-    df_fake_output.to_csv(os.path.join(save_path, './outdataB.csv'))
+    df_fake_output.to_csv(os.path.join(save_path, '../outdataB.csv'))
 
     outputs = get_generator_outputs(netG_A, netG_B, test_A)
     fake_output, rec_input = outputs
     df_fake_output = pd.DataFrame(fake_output).T
-    df_fake_output.to_csv(os.path.join(save_path, '.outdataA/.csv'))
+    df_fake_output.to_csv(os.path.join(save_path, '../outdataA.csv'))
 
 
 def get_networks_params(input_shape, use_dropout, use_batch_norm, use_leaky_relu, use_wgan):
@@ -298,7 +298,7 @@ def main():
     parser.add_argument("--id_loss_weight", default=.3, type=float)
     parser.add_argument("--data_pool_size", default=500, type=int)
 
-    parser.add_argument("--data_path", default="/../inputdata")
+    parser.add_argument("--data_path", default="../inputdata/")
     parser.add_argument("--train_file", default="train_")
     parser.add_argument("--test_file", default="test_")
 
