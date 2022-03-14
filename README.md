@@ -26,16 +26,15 @@ conda activate ./env
 
 * To evaluate with the given scripts in the Analysis folder on the scAEGAN generated data following libraries are required: 
 ```
-Seurat
-clusteval
-scclusteval
-pheatmap
-ggplot2
-cowplot
-pdfCluster
-cluster
-umap
-Rtsne
+Seurat==4.1.0
+clusteval==0.2.1
+scclusteval==0.0.0.9
+pheatmap==1.0.12
+ggplot2==2.3.3.5
+cowplot==1.1.1
+pdfCluster==1.0-3
+cluster==2.1.2
+Rtsne==0.15
 
 ```
 # Usage
@@ -70,5 +69,5 @@ python cGANtrain.py --data_path --train_file --test_file --save_path --input_sha
 --epochs Specifies the number of epochs for training cGAN. Thed default is set to 200.
 ```
 
-# Evaluation
+# Notebooks
 * For evaluation, jupyter notebook is given as as example how to run the evaluation on the output from cyclegan.
