@@ -50,7 +50,10 @@ python AE.py --input_file --output_file  --batch_size  --epochs --dropout --lear
 ```
 --input_file Specifies the input file to the autoencoder. The input to the autoencoder is in the format of cell by gene matrix. With cells as rows and genes as columns in csv format.
 --output_file Specifies the low dimensional representation of the input from the autoencoder.
---epochs Specifies the number of epochs for which autoencoder is trained. The default is 
+--batch_size Specifies the batch size to train the autoencoder. The default batch size is set to 16.
+--epochs Specifies the number of epochs for which autoencoder is trained. The default value is set to 200. 
+--dropout Specifies the dropout rate used to train the autoencoder. The default value is set to 0.2
+--learning_rate Specifies the larning rate. The default learning rate is set to 0.0001
 ```
 *  Training the cyclegan with the given parameters on latent representations obtained from the Autoencoder by running.
    *  The input to the cyclegan is aslo in the format of cell by gene matrix. With cells as rows and genes as columns in csv format
@@ -58,7 +61,16 @@ python AE.py --input_file --output_file  --batch_size  --epochs --dropout --lear
 ```
 python cGANtrain.py --data_path --train_file --test_file --save_path --input_shape --batch_size --epochs
 ```
-
+# Optional arguments
+```
+--data_path Specifies the folder path to the training and testing data
+--train_file Specifies the training files for training the cGAN for both domains (A and B) that are to be integrated. For instance --train_file train_A.csv train_B.csv
+--test_file Specifies the test files. For instance --test_file test_A.csv test_B.csv
+--save_path Specifies the folder path where the output from the cGAN in the csv format will be saved.
+--input_shape Specifies the shape of the input. The default is set to 50.
+--batch_size Specifies the batch size. The default batch size for cGAN is set to 4.
+--epochs Specifies the number of epochs for training cGAN. Thed default is set to 200.
+```
 
 # Evaluation
 * For evaluation, jupyter notebook is given as as example how to run the evaluation on the output from cyclegan.
