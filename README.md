@@ -46,7 +46,7 @@ python AE.py --input_file <Specifies the input file (cell by gene matrix in csv 
              --batch_size <Specifies the batch size to train the autoencoder. Default=16>  \
              --epochs <Specifies  the number of epochs for which autoencoder is trained.Default=200> \
              --dropout <Specifies the dropout rate used to train the autoencoder.Default=0.2> \
-             --learning_rate <learning_rate Specifies the larning rate.Default=0.0001>
+             --learning_rate <Specifies the larning rate.Default=0.0001>
 ```
 
 
@@ -57,7 +57,7 @@ python AE.py --input_file <Specifies the input file (cell by gene matrix in csv 
 python cGANtrain.py --data_path <Specifies the folder path to the training and testing data> \
                     --train_file <Specifies the training files for training the cGAN for both domains (A and B) that are to be integrated. 
                     For instance --train_file train_A.csv train_B.csv \
-                    --test_file <pecifies the test files. For instance --test_file test_A.csv test_B.csv> \
+                    --test_file <Specifies the testing files. For instance --test_file test_A.csv test_B.csv> \
                     --save_path <Specifies the folder path where the output from the cGAN in the csv format will be saved> \
                     --input_shape <Specifies the shape of the input. Default=50> \
                     --batch_size <Specifies the batch size, Default=4> \
