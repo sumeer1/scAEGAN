@@ -11,9 +11,9 @@ scAEGAN is a python based deep learning model that is designed for single-cell-o
 
 # Installation Requisites 
 
-The required libraries are inlcuded in environment.yml file. In order to install these libraries, follow the following steps:
+The required libraries are included in environment.yml file. In order to install these libraries, follow the following steps:
 
-* Creating the conda environment with the folowing command. This will create and install the libraries included in the environment.yml file for training the scAEGAN.
+* Creating the conda environment with the following command. This will create and install the libraries included in the environment.yml file for training the scAEGAN.
 ```
 conda env create --prefix ./env --file environment.yml --force
  ```
