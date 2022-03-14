@@ -15,14 +15,12 @@ The required libraries are inlcuded in environment.yml file. In order to install
 
 * Creating the conda environment with the folowing command. This will create and install the libraries included in the environment.yml file for training the scAEGAN.
 ```
-
-        conda env create --prefix ./env --file environment.yml --force
+conda env create --prefix ./env --file environment.yml --force
  ```
 
 * The second step is to activate the conda envirnoment. 
 ```
-       conda activate ./env
-       
+conda activate ./env      
 ```
 
 
