@@ -51,7 +51,6 @@ python AE.py --input_file <Specifies the input file (cell by gene matrix in csv 
 
 
 *  Training the cyclegan with the given parameters on latent representations obtained from the Autoencoder by running.
-   *  The input to the cyclegan is aslo in the format of cell by gene matrix. With cells as rows and genes as columns in csv format
 
 ```bash
 python cGANtrain.py --data_path <Specifies the folder path to the training and testing data> \
