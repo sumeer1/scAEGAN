@@ -40,33 +40,28 @@ Rtsne==0.15
 # Usage
 There are two steps for the basic usage after activating the conda environment.
 *  Training the autoencoder with the given parameters to get the latent representation by running. 
+```bash
+python AE.py --input_file <Specifies the input file to the autoencoder> \
+             --output_file <Specifies the low dimensional representation of the input from the autoencoder> \
+             --batch_size <Specifies the batch size to train the autoencoder. Default=16>  \
+             --epochs <Specifies  the number of epochs for which autoencoder is trained.Default=200> \
+             --dropout <Specifies the dropout rate used to train the autoencoder.Default=0.2> \
+             --learning_rate <learning_rate Specifies the larning rate.Default=0.0001>
 ```
-python AE.py --input_file <h3 text style="color:#ff0000">Danger</h3> --output_file  --batch_size  --epochs --dropout --learning_rate
-```
-# Optional arguments
-```
---input_file  Specifies the input file to the autoencoder. The input to the autoencoder is in the format of cell by gene matrix. With cells as rows and genes as columns in csv format.
---output_file  Specifies the low dimensional representation of the input from the autoencoder.
---batch_size <int> Specifies the batch size to train the autoencoder. The default batch size is set to 16.
---epochs Specifies <int> the number of epochs for which autoencoder is trained. The default value is set to 200. 
---dropout Specifies the dropout rate used to train the autoencoder. The default value is set to 0.2
---learning_rate Specifies the larning rate. The default learning rate is set to 0.0001
+
 ```
 *  Training the cyclegan with the given parameters on latent representations obtained from the Autoencoder by running.
    *  The input to the cyclegan is aslo in the format of cell by gene matrix. With cells as rows and genes as columns in csv format
 
-```
-python cGANtrain.py --data_path --train_file --test_file --save_path --input_shape --batch_size --epochs
-```
-# Optional arguments
-```
---data_path Specifies the folder path to the training and testing data
---train_file Specifies the training files for training the cGAN for both domains (A and B) that are to be integrated. For instance --train_file train_A.csv train_B.csv
---test_file Specifies the test files. For instance --test_file test_A.csv test_B.csv
---save_path Specifies the folder path where the output from the cGAN in the csv format will be saved.
---input_shape Specifies the shape of the input. The default is set to 50.
---batch_size Specifies the batch size. The default batch size for cGAN is set to 4.
---epochs Specifies the number of epochs for training cGAN. Thed default is set to 200.
+```bash
+python cGANtrain.py --data_path <Specifies the folder path to the training and testing data> \
+                    --train_file <Specifies the training files for training the cGAN for both domains (A and B) that are to be integrated. 
+                    For instance --train_file train_A.csv train_B.csv \
+                    --test_file <pecifies the test files. For instance --test_file test_A.csv test_B.csv> \
+                    --save_path <Specifies the folder path where the output from the cGAN in the csv format will be saved> \
+                    --input_shape <Specifies the shape of the input. Default=50> \
+                    --batch_size <Specifies the batch size, Default=4> \
+                    --epochs <Specifies the number of epochs for training cGAN, Default=200>
 ```
 
 # Notebooks
