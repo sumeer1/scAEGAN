@@ -41,7 +41,7 @@ Rtsne==0.15
 There are two steps for the basic usage after activating the conda environment.
 *  Training the autoencoder with the given parameters to get the latent representation by running. 
 ```bash
-python AE.py --input_file <Specifies the input file to the autoencoder> \
+python AE.py --input_file <Specifies the input file (cell by gene matrix in csv format)> \
              --output_file <Specifies the low dimensional representation of the input from the autoencoder> \
              --batch_size <Specifies the batch size to train the autoencoder. Default=16>  \
              --epochs <Specifies  the number of epochs for which autoencoder is trained.Default=200> \
@@ -49,7 +49,7 @@ python AE.py --input_file <Specifies the input file to the autoencoder> \
              --learning_rate <learning_rate Specifies the larning rate.Default=0.0001>
 ```
 
-```
+
 *  Training the cyclegan with the given parameters on latent representations obtained from the Autoencoder by running.
    *  The input to the cyclegan is aslo in the format of cell by gene matrix. With cells as rows and genes as columns in csv format
 
