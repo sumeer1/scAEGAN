@@ -41,14 +41,14 @@ Rtsne==0.15
 There are two steps for the basic usage after activating the conda environment.
 *  Training the autoencoder with the given parameters to get the latent representation by running. 
 ```
-python AE.py --input_file --output_file  --batch_size  --epochs --dropout --learning_rate
+python AE.py --input_file <h3 text style="color:#ff0000">Danger</h3> --output_file  --batch_size  --epochs --dropout --learning_rate
 ```
 # Optional arguments
 ```
---input_file Specifies the input file to the autoencoder. The input to the autoencoder is in the format of cell by gene matrix. With cells as rows and genes as columns in csv format.
---output_file Specifies the low dimensional representation of the input from the autoencoder.
---batch_size Specifies the batch size to train the autoencoder. The default batch size is set to 16.
---epochs Specifies the number of epochs for which autoencoder is trained. The default value is set to 200. 
+--input_file  Specifies the input file to the autoencoder. The input to the autoencoder is in the format of cell by gene matrix. With cells as rows and genes as columns in csv format.
+--output_file  Specifies the low dimensional representation of the input from the autoencoder.
+--batch_size <int> Specifies the batch size to train the autoencoder. The default batch size is set to 16.
+--epochs Specifies <int> the number of epochs for which autoencoder is trained. The default value is set to 200. 
 --dropout Specifies the dropout rate used to train the autoencoder. The default value is set to 0.2
 --learning_rate Specifies the larning rate. The default learning rate is set to 0.0001
 ```
