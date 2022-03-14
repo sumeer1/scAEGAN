@@ -43,9 +43,9 @@ There are two steps for the basic usage after activating the conda environment.
 ```bash
 python AE.py --input_file <Specifies the input file (cell by gene matrix in csv format)> \
              --output_file <Specifies the low dimensional representation of the input from the autoencoder> \
-             --batch_size <Specifies the batch size to train the autoencoder. Default=16>  \
-             --epochs <Specifies  the number of epochs for which autoencoder is trained.Default=200> \
-             --dropout <Specifies the dropout rate used to train the autoencoder.Default=0.2> \
+             --batch_size <Specifies the batch size to train the autoencoder, default=16>  \
+             --epochs <Specifies  the number of epochs for which autoencoder is trained, default=200> \
+             --dropout <Specifies the dropout rate used to train the autoencoder, default=0.2> \
              --learning_rate <Specifies the larning rate.Default=0.0001>
 ```
 
@@ -59,9 +59,9 @@ python cGANtrain.py --data_path <Specifies the folder path to the training and t
                     For instance --train_file train_A.csv train_B.csv \
                     --test_file <Specifies the testing files. For instance --test_file test_A.csv test_B.csv> \
                     --save_path <Specifies the folder path where the output from the cGAN in the csv format will be saved> \
-                    --input_shape <Specifies the shape of the input. Default=50> \
-                    --batch_size <Specifies the batch size, Default=4> \
-                    --epochs <Specifies the number of epochs for training cGAN, Default=200>
+                    --input_shape <Specifies the shape of the input, default=50> \
+                    --batch_size <Specifies the batch size, default=4> \
+                    --epochs <Specifies the number of epochs for training cGAN, default=200>
 ```
 
 # Notebooks
