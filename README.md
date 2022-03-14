@@ -43,9 +43,14 @@ Rtsne
 # Usage
 There are two steps for the basic usage after activating the conda environment.
 *  Training the autoencoder with the given parameters to get the latent representation by running. 
-   *  The input to the autoencoder is in the format of cell by gene matrix. With cells as rows and genes as columns in csv format.
-```
+  
 python AE.py --input_file --output_file  --batch_size  --epochs --dropout --learning_rate
+```
+# Optional arguments
+```
+--input_file Specifies the input file to the autoencoder. The input to the autoencoder is in the format of cell by gene matrix. With cells as rows and genes as columns in csv format.
+--output_file Specifies the low dimensional representation of the input from the autoencoder.
+ --epochs Specifies the number of epochs for which autoencoder is trained. The default is 
 ```
 *  Training the cyclegan with the given parameters on latent representations obtained from the Autoencoder by running.
    *  The input to the cyclegan is aslo in the format of cell by gene matrix. With cells as rows and genes as columns in csv format
@@ -53,6 +58,7 @@ python AE.py --input_file --output_file  --batch_size  --epochs --dropout --lear
 ```
 python cGANtrain.py --data_path --train_file --test_file --save_path --input_shape --batch_size --epochs
 ```
+
 
 # Evaluation
 * For evaluation, jupyter notebook is given as as example how to run the evaluation on the output from cyclegan.
