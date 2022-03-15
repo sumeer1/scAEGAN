@@ -65,7 +65,10 @@ python cGANtrain.py --data_path <Specifies the folder path to the training and t
                     --epochs <Specifies the number of epochs for training cGAN, default=200>
 ```
 
-# Notebooks
-* For analysis, jupyter notebook is given as as example how to run the analysis with the scripts in Analysis folder on the output data given in the Simulated_Data folder from cyclegan.
+# Running scAEGAN on simulated data
+*   In this tutorial we show how to run scAEGAN on the Simulated Data. we have 
+prepared the required input dataset which you can find in the Simulated_Data folder
+*   We created a command-line interface for scAEGAN that allows it to be run in a high-performance computing environment. Because scAEGAN is built with tensorflow/keras, we recommend running it on GPUs to significantly reduce run-time.
+ * For analysis, jupyter notebook is given as as example how to run the scAEGAN and carry out the analysis with the scripts in Analysis folder 
 
 
