@@ -70,5 +70,7 @@ python cGANtrain.py --data_path <Specifies the folder path to the training and t
 prepared the required input dataset which you can find in the Simulated_Data folder
 *   We created a command-line interface for scAEGAN that allows it to be run in a high-performance computing environment. Because scAEGAN is built with tensorflow/keras, we recommend running it on GPUs to significantly reduce run-time.
  * For analysis, jupyter notebook is given as as example how to run the scAEGAN and carry out the analysis with the scripts in Analysis folder 
+ 
+ [a link] (https://github.com/sumeer1/scAEGAN/tree/main/Example)
 
 
