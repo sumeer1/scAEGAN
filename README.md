@@ -65,3 +65,5 @@ python cGANtrain.py --data_path <Specifies the folder path to the training and t
 
 # Notebooks
 * For analysis, jupyter notebook is given as as example how to run the analysis with the scripts in Analysis folder on the output data given in the Simulated_Data folder from cyclegan.
+
+
