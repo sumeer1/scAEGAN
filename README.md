@@ -8,7 +8,7 @@ This repository contains the online data and scAEGAN code to analyze and visuali
 * `Usage`
 * `Running Example`
 
-[summary](# summary)
+[summary](#summary)
 
  summary
  -------
