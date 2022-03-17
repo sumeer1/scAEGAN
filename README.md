@@ -55,7 +55,7 @@ Rtsne 0.15.0
 Datasets
 ---------
 
-Simulated data : Two datasets containing 600 cells from 5 populations and with 3000 genes each were simulated using SymSim ([paper])(https://www.nature.com/articles/s41467-019-10500-w#code-availability)
+Simulated data : Two datasets containing 600 cells from 5 populations and with 3000 genes each were simulated using SymSim [paper](https://www.nature.com/articles/s41467-019-10500-w#code-availability)
 
 Real data: The pre-processed mouse hematopoietic stem cell data-set of young and old individuals downloaded from   https://github.com/quon-titative-biology/scalign
 
