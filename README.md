@@ -1,15 +1,28 @@
 # scAEGAN- Unification of Single-Cell Genomics Data by Adversarial Learning of Latent Space Correspondences 
 This repository contains the online data and scAEGAN code to analyze and visualize multi-omics integration analysis, and it's downstream analysis outputs. Metrics are also available for quantifying outputs quality.
 
+* `summary`_
+* `scAEGAN Workflow`_
+* `Installation Requisites`_
+* `Datasets`_
+* `Usage`_
+* `Running Example`_
 
-# scAEGAN Workflow
-<img width="873" alt="scAEGAN" src="https://user-images.githubusercontent.com/70262340/150944062-c9c72e62-ee8b-41f2-8d97-8d7e8711529a.PNG">
 
-# Summary
+
+ summary
+ -------
 scAEGAN is a python based deep learning model that is designed for single-cell-omics and multi-omics integration. scAEGAN does this by using an Autoencoder which learns a low-dimensional embedding of each experiment independently, respecting each sample's uniqueness, protocol. Next, cycleGAN learns a non-linear mapping between these two Autoencoder representations, leveraging the observation that distributions in different latent spaces are similar.
 
+scAEGAN Workflow
+----------------
+<img width="873" alt="scAEGAN" src="https://user-images.githubusercontent.com/70262340/150944062-c9c72e62-ee8b-41f2-8d97-8d7e8711529a.PNG">
 
-# Installation Requisites 
+
+
+
+Installation Requisites 
+-----------------------
 
 For the time being, we do not have a mechanism for installing scAEGAN directly from sources such as pip or conda. scAEGAN is currently obtained by simply cloning the repository.
 
@@ -28,18 +41,24 @@ conda activate ./env
 
 * To evaluate with the given scripts in the Analysis folder on the scAEGAN generated data following libraries are required: 
 ```
-Seurat==4.1.0
-clusteval==0.2.1
-scclusteval==0.0.0.9
-pheatmap==1.0.12
-ggplot2==2.3.3.5
-cowplot==1.1.1
-pdfCluster==1.0-3
-cluster==2.1.2
-Rtsne==0.15
-
+Seurat 4.1.0
+clusteval 0.2.1
+scclusteval 0.0.9
+pheatmap 1.0.12
+ggplot2 2.3.5
+cowplot 1.1.1
+pdfCluster 1.0.3
+cluster 2.1.2
+Rtsne 0.15.0
 ```
-# Usage
+Datasets
+---------
+```
+Simulated data : Two datasets containing 600 cells from 5 populations and with 3000 genes each were simulated using SymSim
+Real data  https://github.com/quon-titative-biology/scalign
+
+Usage
+------
 There are two steps for the basic usage after activating the conda environment.
 *  Training the autoencoder with the given parameters to get the latent representation by running. 
 ```bash
@@ -65,7 +84,8 @@ python cGANtrain.py --data_path <Specifies the folder path to the training and t
                     --epochs <Specifies the number of epochs for training cGAN, default=200>
 ```
 
-# Running scAEGAN on simulated data
+ Running Example
+ ---------------
 *   In this tutorial we show how to run scAEGAN on the Simulated Data. We have 
 prepared the required input dataset which you can find in the Simulated_Data folder
 *   We created a command-line interface for scAEGAN that allows it to be run in a high-performance computing environment. Because scAEGAN is built with tensorflow/keras, we recommend running it on GPUs to significantly reduce run-time.
