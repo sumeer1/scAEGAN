@@ -25,7 +25,7 @@ scAEGAN Workflow
 Installation Requisites 
 -----------------------
 
-For the time being, we do not have a mechanism for installing scAEGAN directly from sources such as pip or conda. scAEGAN is currently obtained by simply cloning the repository.
+scAEGAN is simply installed by cloning the repository.
 
 The required libraries are included in environment.yml file. In order to install these libraries, follow the following steps:
 
