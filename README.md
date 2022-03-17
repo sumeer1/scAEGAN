@@ -50,7 +50,12 @@ pdfCluster 1.0.3
 cluster 2.1.2
 Rtsne 0.15.0
 ```
-scAEGAN is simply installed by cloning the repository.
+* scAEGAN is simply installed by cloning the repository.
+```
+git clone https://github.com/sumeer1/scAEGAN.git
+
+cd scAEGAN/
+```
 
 Datasets
 ---------
