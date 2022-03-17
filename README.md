@@ -27,7 +27,7 @@ Installation Requisites
 
 scAEGAN is simply installed by cloning the repository.
 
-The required libraries are included in environment.yml file. In order to install these libraries, follow the following steps:
+The required libraries are included in [environment file](https://github.com/sumeer1/scAEGAN/blob/main/environment.yml). In order to install these libraries, follow the following steps:
 
 * Creating the conda environment with the following command. This will create and install the libraries included in the environment.yml file for training the scAEGAN.
 ```
