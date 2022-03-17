@@ -3,7 +3,6 @@ scAEGAN- Unification of Single-Cell Genomics Data by Adversarial Learning of Lat
 This repository contains the online data and scAEGAN code to analyze and visualize multi-omics integration analysis, and it's downstream analysis outputs. Metrics are also available for quantifying outputs quality.
 
 * [Summary](#Summary)
-* [scAEGAN Workflow](#scAEGAN-Workflow)
 * [Installation Requisites](#Installation-Requisites )
 * [Datasets](#Datasets)
 * [Usage](#Usage)
