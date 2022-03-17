@@ -2,13 +2,13 @@
 This repository contains the online data and scAEGAN code to analyze and visualize multi-omics integration analysis, and it's downstream analysis outputs. Metrics are also available for quantifying outputs quality.
 
 * `summary`
-* `scAEGAN Workflow`
+* `scAEGAN Workflow
 * `Installation Requisites`
 * `Datasets`
 * `Usage`
 * `Running Example`
 
-
+[summary](# summary)
 
  summary
  -------
@@ -53,7 +53,7 @@ Rtsne 0.15.0
 ```
 Datasets
 ---------
-```
+
 Simulated data : Two datasets containing 600 cells from 5 populations and with 3000 genes each were simulated using SymSim
 Real data  https://github.com/quon-titative-biology/scalign
 
