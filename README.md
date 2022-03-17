@@ -3,10 +3,10 @@ This repository contains the online data and scAEGAN code to analyze and visuali
 
 * [summary](#summary)
 * [scAEGAN Workflow](#scAEGAN-Workflow)
-* [Installation Requisites](#InstallationRequisites )
+* [Installation Requisites](#Installation-Requisites )
 * [Datasets](#Datasets)
 * [Usage](#Usage)
-* [Running Example](#RunningExample)
+* [Running Example](#Running-Example)
 
 
 
@@ -14,7 +14,7 @@ This repository contains the online data and scAEGAN code to analyze and visuali
  -------
 scAEGAN is a python based deep learning model that is designed for single-cell-omics and multi-omics integration. scAEGAN does this by using an Autoencoder which learns a low-dimensional embedding of each experiment independently, respecting each sample's uniqueness, protocol. Next, cycleGAN learns a non-linear mapping between these two Autoencoder representations, leveraging the observation that distributions in different latent spaces are similar.
 
-scAEGAN-Workflow
+scAEGAN Workflow
 ----------------
 <img width="873" alt="scAEGAN" src="https://user-images.githubusercontent.com/70262340/150944062-c9c72e62-ee8b-41f2-8d97-8d7e8711529a.PNG">
 
