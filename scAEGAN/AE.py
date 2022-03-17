@@ -22,11 +22,11 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('--input_file', type=str, required=True)
 parser.add_argument('--output_file', type=str, required=True)
-parser.add_argument('--dropout_rate', type=int, required=True, default=0.2)
-parser.add_argument('--learning_rate', type=int, required=True, default=0.0001)
+parser.add_argument('--dropout_rate', type=float, required=True, default=0.2)
+parser.add_argument('--learning_rate', type=float, required=True, default=0.0001)
 parser.add_argument('--batch_size', type=int, required=True, default=16)
 parser.add_argument('--epochs', type=int, required=True, default=200)
-parser.add_argument('--validation_split', type=int, required=False, default=0.2)
+parser.add_argument('--validation_split', type=float, required=False, default=0.2)
 
 args = parser.parse_args()
 
