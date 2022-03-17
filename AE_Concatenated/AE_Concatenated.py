@@ -17,48 +17,46 @@ set_random_seed(2)
 import warnings
 warnings.filterwarnings('ignore')
 
-scRNAseq1 = pd.read_csv('../DomainA.csv',sep=',', index_col=0).transpose()
-scRNAseq2 = pd.read_csv('../DomainB.csv',sep=',', index_col=0).transpose()
+domainA = pd.read_csv('../DomainA.csv',sep=',', index_col=0)
+domainB = pd.read_csv('../DomainB.csv',sep=',', index_col=0)
 
 
-X_scRNAseq1 = scRNAseq1.values[:,0:(scRNAseq1.shape[1])]
+N_domainA = domainA.values[:,0:(domainA.shape[1])]
 
-X_scRNAseq2 = scRNAseq2.values[:,0:(scRNAseq2.shape[1])]
+N_domainB = domainB.values[:,0:(domainB.shape[1])]
 
 # Input Layer
-ncol_scRNAseq1 = X_scRNAseq1.shape[1]
-input_dim_scRNAseq1 = Input(shape = (ncol_scRNAseq1, ), name = "scRNAseq1")
-ncol_scRNAseq2 = scRNAseq2.shape[1]
-input_dim_scRNAseq2 = Input(shape = (ncol_scRNAseq2, ), name = "scRNAseq2")
+ncol_domainA = N_domainA.shape[1]
+input_dim_domainA = Input(shape = (ncol_domainA, ), name = "domainA")
+ncol_domainB = N_domainB.shape[1]
+input_dim_domainB = Input(shape = (ncol_domainB, ), name = "domainB")
 
-encoding_dim_scRNAseq1 = 30
-encoding_dim_scRNAseq2 = 30
+encoding_dim_domainA = 30
+encoding_dim_domainB = 30
 
-dropout_scRNAseq1 = Dropout(0.2, name = "Dropout_scRNAseq1")(input_dim_scRNAseq1)
-dropout_scRNAseq2 = Dropout(0.2, name = "Dropout_scRNAseq2")(input_dim_scRNAseq2)
+dropout_domainA = Dropout(0.2, name = "Dropout_domainA")(input_dim_domainA)
+dropout_domainB = Dropout(0.2, name = "Dropout_domainB")(input_dim_scRNAseq2)
 
-encoded_scRNAseq1 = Dense(encoding_dim_scRNAseq1, activation = 'relu', name = "Encoder_scRNAseq1")(dropout_scRNAseq1)
-encoded_scRNAseq2 = Dense(encoding_dim_scRNAseq2, activation = 'relu', name = "Encoder_scRNAseq2")(dropout_scRNAseq2)
+encoded_domainA = Dense(encoding_dim_domainA, activation = 'relu', name = "Encoder_domainA")(dropout_domainA)
+encoded_domainB = Dense(encoding_dim_domainB, activation = 'relu', name = "Encoder_domainB")(dropout_domainB)
 
-merge = concatenate([encoded_scRNAseq1,  encoded_scRNAseq2])
+merge = concatenate([encoded_domainA,  encoded_domainB])
 
 bottleneck = Dense(50, kernel_initializer = 'uniform', activation = 'linear', name = "Bottleneck")(merge)
 
-merge_inverse = Dense(encoding_dim_scRNAseq1 + encoding_dim_scRNAseq2, activation = 'relu', name = "Concatenate_Inverse")(bottleneck)
+merge_inverse = Dense(encoding_dim_domainA + encoding_dim_domainB, activation = 'relu', name = "Concatenate_Inverse")(bottleneck)
 
-decoded_scRNAseq1 = Dense(ncol_scRNAseq1, activation = 'sigmoid', name = "Decoder_scRNAseq1")(merge_inverse)
+decoded_domainA = Dense(ncol_domainA, activation = 'sigmoid', name = "Decoder_domainA")(merge_inverse)
 
-decoded_scRNAseq2 = Dense(ncol_scRNAseq2, activation = 'sigmoid', name = "Decoder_scRNAseq2")(merge_inverse)
+decoded_domainB = Dense(ncol_domainB, activation = 'sigmoid', name = "Decoder_domainB")(merge_inverse)
 
-autoencoder = Model(input = [input_dim_scRNAseq1, input_dim_scRNAseq2], output = [decoded_scRNAseq1, decoded_scRNAseq2])
+autoencoder = Model(input = [input_dim_domainA, input_dim_domainB], output = [decoded_domainA, decoded_domainB])
 
 opt = keras.optimizers.Adam(lr=0.0005)
-autoencoder.compile(optimizer = opt, loss={'Decoder_scRNAseq1': 'mean_squared_error', 'Decoder_scRNAseq2': 'mean_squared_error', })
+autoencoder.compile(optimizer = opt, loss={'Decoder_domainA': 'mean_squared_error', 'Decoder_scRNAseq2': 'mean_squared_error', })
 autoencoder.summary()
 
-plot_model(autoencoder, to_file='autoencoder_graph.png')
-
-estimator = autoencoder.fit([X_scRNAseq1, X_scRNAseq2], [X_scRNAseq1, X_scRNAseq2], epochs = 200, batch_size = 16, validation_split = 0.2, shuffle = True, verbose = 1)
+estimator = autoencoder.fit([N_domainA, N_domainB], [N_domainA, N_domainB], epochs = 200, batch_size = 16, validation_split = 0.2, shuffle = True, verbose = 1)
 print("Training Loss: ",estimator.history['loss'][-1])
 print("Validation Loss: ",estimator.history['val_loss'][-1])
 plt.plot(estimator.history['loss'])
@@ -69,10 +67,8 @@ plt.xlabel('Epoch')
 plt.legend(['Train','Validation'], loc = 'upper right')
 plt.show()
 
-encoder = Model(input = [input_dim_scRNAseq1, input_dim_scRNAseq2], output = bottleneck)
-bottleneck_representation = encoder.predict([X_scRNAseq1, X_scRNAseq2])
-print(pd.DataFrame(bottleneck_representation).shape)
-print(pd.DataFrame(bottleneck_representation).iloc[0:5,0:5])
+encoder = Model(input = [input_dim_domainA, input_dim_domainB], output = bottleneck)
+bottleneck_representation = encoder.predict([N_domainA, N_domainB])
 
 RNA_ATAC_Latent =pd.DataFrame(bottleneck_representation)
 RNA_ATAC_Latent.to_csv("../Bottleneck_Representation.csv",sep=',')
