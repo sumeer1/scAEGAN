@@ -1,4 +1,3 @@
-
 """
 
 author: Sumeer Khan
@@ -83,6 +82,7 @@ domainA_Latent.to_csv(args.output_file1,sep=',')
 # Input from the domainB (cell by gene matrix)
 
 Y = pd.read_csv(args.input_file2,sep=',', index_col=0).transpose()
+
 # Model2
 model2 = Sequential()
 model2.add(Dropout(args.dropout_rate,  input_shape=(Y.shape[1],)))
