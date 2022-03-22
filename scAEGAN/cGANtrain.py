@@ -11,7 +11,7 @@ import tensorflow as tf
 from keras import backend as K
 from keras.backend.tensorflow_backend import set_session
 
-from image_pool import ImagePool
+from utils.image_pool import ImagePool
 from models.discriminator import Discriminator
 from models.generator import Generator
 from models.data_loader import (load_data,
@@ -209,12 +209,12 @@ def process_test_data(generators_tuple, test_data_tuple, save_path):
     outputs = get_generator_outputs(netG_B, netG_A, test_B)
     fake_output, rec_input = outputs
     df_fake_output = pd.DataFrame(fake_output).T
-    df_fake_output.to_csv(os.path.join(save_path, '../outdataB.csv'))
+    df_fake_output.to_csv(os.path.join(save_path, 'outdataB.csv'))
 
     outputs = get_generator_outputs(netG_A, netG_B, test_A)
     fake_output, rec_input = outputs
     df_fake_output = pd.DataFrame(fake_output).T
-    df_fake_output.to_csv(os.path.join(save_path, '../outdataA.csv'))
+    df_fake_output.to_csv(os.path.join(save_path, 'outdataA.csv'))
 
 
 def get_networks_params(input_shape, use_dropout, use_batch_norm, use_leaky_relu, use_wgan):
