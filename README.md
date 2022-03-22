@@ -75,7 +75,7 @@ python AE.py --input_file1 <Specifies the domainA input file (cell by gene matri
              --batch_size <Specifies the batch size to train the autoencoder, default=16>  \
              --epochs <Specifies  the number of epochs for which autoencoder is trained, default=200> \
              --dropout <Specifies the dropout rate used to train the autoencoder, default=0.2> \
-             --learning_rate <Specifies the larning rate.Default=0.0001>
+             --learning_rate <Specifies the larning rate, default=0.0001>
 ```
 
 
