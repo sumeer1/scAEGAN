@@ -69,7 +69,7 @@ There are two steps for the basic usage after activating the conda environment.
 *  Training the autoencoder with the given parameters to get the latent representation by running. 
 ```bash
 python AE.py --input_file1 <Specifies the domainA input file (cell by gene matrix in csv format)> \
-             --input_file2 <Specifies the domainB input file (cell by gene matrix in csv format)>
+             --input_file2 <Specifies the domainB input file (cell by gene matrix in csv format)>  \
              --output_file1 <Specifies the low dimensional representation of the input1 from the autoencoder> \
              --output_file2 <Specifies the low dimensional representation of the input2 from the autoencoder> \
              --batch_size <Specifies the batch size to train the autoencoder, default=16>  \
