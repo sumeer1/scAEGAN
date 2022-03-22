@@ -39,7 +39,7 @@ conda activate ./env
 ```
 
 
-* To make use of the given scripts in the Evaluation folder on the scAEGAN generated,run
+* To make use of the given scripts in the Evaluation folder on the scAEGAN generated, run
 [R_libraries.R](https://github.com/sumeer1/scAEGAN/blob/main/Evaluation/R_libraries.R) under Rv4.1.1 or higher R version 4 to automatically install all dependencies required. 
 
 
