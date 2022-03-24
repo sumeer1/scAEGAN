@@ -56,7 +56,7 @@ Datasets
 
 Simulated data : Two datasets containing 600 cells from 5 populations and with 3000 genes each were simulated using SymSim [(Zhang, X et al.)](https://www.nature.com/articles/s41467-019-10500-w#code-availability).
 
-Real data: The pre-processed mouse hematopoietic stem cell dataset of young and old individuals downloaded from   https://github.com/quon-titative-biology/scalign.
+Real data: The pre-processed mouse hematopoietic stem cell dataset of young and old individuals downloaded from   https://github.com/quon-titative-biology/scalign is given in the Real_Data folder.
 
 Usage
 ------
@@ -70,7 +70,7 @@ python AE.py --input_file1 <Specifies the domainA input file (cell by gene matri
              --batch_size <Specifies the batch size to train the autoencoder, default=16>  \
              --epochs <Specifies  the number of epochs for which autoencoder is trained, default=200> \
              --dropout <Specifies the dropout rate used to train the autoencoder, default=0.2> \
-             --learning_rate <Specifies the larning rate, default=0.0001>
+             --learning_rate <Specifies the learning rate, default=0.0001>
 ```
 
 
