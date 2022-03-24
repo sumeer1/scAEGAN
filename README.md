@@ -2,7 +2,7 @@
 
 scAEGAN- Unification of Single-Cell Genomics Data by Adversarial Learning of Latent Space Correspondences 
 ---------------------------------------------------------------------------------------------------------
-This repository contains the online data and scAEGAN code to analyze and visualize multi-omics integration analysis, and it's downstream analysis outputs. Metrics are also available for quantifying outputs quality.
+This repository contains the  scAEGAN code and online data for the single-omics and multi-omics integration. It also contains the code to evaluate and visualize the integration results. Metrics are available for quantifying outputs quality.
 
 * [Summary](#Summary)
 * [Installation Requisites](#Installation-Requisites )
@@ -14,7 +14,7 @@ This repository contains the online data and scAEGAN code to analyze and visuali
 
  Summary
  -------
-scAEGAN is a python based deep learning model that is designed for single-cell-omics and multi-omics integration. scAEGAN does this by using an Autoencoder which learns a low-dimensional embedding of each experiment independently, respecting each sample's uniqueness, protocol. Next, cycleGAN learns a non-linear mapping between these two Autoencoder representations, leveraging the observation that distributions in different latent spaces are similar.
+scAEGAN is a python based deep learning model that is designed for single-cell-omics and multi-omics integration. scAEGAN performs this by using an Autoencoder which learns a low-dimensional embedding of each experiment independently, respecting each sample's uniqueness, protocol. Next, cycleGAN learns a non-linear mapping between these two Autoencoder representations.
 
 scAEGAN Workflow
 ----------------
