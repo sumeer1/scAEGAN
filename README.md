@@ -39,7 +39,7 @@ conda activate ./env
 ```
 
 
-* Optionally, [R_libraries.R](https://github.com/sumeer1/scAEGAN/blob/main/Evaluation/R_libraries.R), in R versions 4.0.0 <= 4.1.1, to install automatically the libraries and dependencies required for the scripts in the Evaluation folder”
+* Optionally, run [R_libraries.R](https://github.com/sumeer1/scAEGAN/blob/main/Evaluation/R_libraries.R), in R versions 4.0.0 <= 4.1.1, to install automatically the libraries and dependencies required for the scripts in the Evaluation folder”
 	
 
 
