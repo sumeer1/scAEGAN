@@ -1,5 +1,4 @@
 # Package names
-# Package names
 
 pkgLoad <- function( packages = "favourites" ) {
 
