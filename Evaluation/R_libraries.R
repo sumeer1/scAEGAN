@@ -1,5 +1,5 @@
 # Package names
-packages <- c("ggplot2", "Seurat", "tidyverse", "cowplot", "pdfCluster", "clusteval", "scclusteval", "pheatmap", "cluster", "Rtsne", "umap", "e1071")
+packages <- c("ggplot2", "Seurat", "tidyverse", "cowplot", "clusteval", "pdfCluster", "pheatmap", "cluster", "Rtsne", "umap", "e1071")
 
 # Install packages not yet installed
 installed_packages <- packages %in% rownames(installed.packages())
