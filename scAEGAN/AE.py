@@ -152,9 +152,5 @@ domainB_Latent.to_csv(args.output_file2,sep=',')
 
 
 
-encoder = Model(model1.input, model1.get_layer('bottleneck1').output)
-bottleneck_representation1 = encoder.predict(X)
 
-RNA_Latent =pd.DataFrame(bottleneck_representation1)
-RNA_Latent.to_csv(args.output_file1,sep=',')
 
