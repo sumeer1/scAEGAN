@@ -284,7 +284,7 @@ def main():
     parser.add_argument("--input_shape", default=50, type=int)
 
     parser.add_argument("--batch_size", default=4, type=int)
-    parser.add_argument("--epochs", default=200, type=int)
+    parser.add_argument("--epochs", default=400, type=int)
     parser.add_argument("--d_iters", default=5, type=int)
     parser.add_argument("--discriminator_patience", default=1, type=int)
 
