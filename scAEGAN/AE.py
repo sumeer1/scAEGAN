@@ -20,6 +20,7 @@ from keras.utils import plot_model
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 from keras.optimizers import Adam
+from keras.constraints import UnitNorm, Constraint
 from sklearn.decomposition import PCA
 from keras.models import Sequential, Model
 from keras import regularizers
@@ -44,16 +45,37 @@ parser.add_argument('--validation_split', type=float, required=False, default=0.
 args = parser.parse_args()
 
 
-################ Mode 1 ########################################################################################################################################################################################
+################ Model 1 ########################################################################################################################################################################################
 
 # Input from the domainA (cell by gene matrix)
 
 X = pd.read_csv(args.input_file1,sep=',', index_col=0).transpose()
 
+
+class WeightsOrthogonalityConstraint(Constraint):
+    def __init__(self, encoding_dim, weightage = 1.0, axis = 0):
+        self.encoding_dim = encoding_dim
+        self.weightage = weightage
+        self.axis = axis
+        
+    def weights_orthogonality(self, w):
+        if(self.axis==1):
+            w = K.transpose(w)
+        if(self.encoding_dim > 1):
+            m = K.dot(K.transpose(w), w) - K.eye(self.encoding_dim)
+            return self.weightage * K.sqrt(K.sum(K.square(m)))
+        else:
+            m = K.sum(w ** 2) - 1.
+            return m
+
+    def __call__(self, w):
+        return self.weights_orthogonality(w)
+
+
 # Model1
 model1 = Sequential()
 model1.add(Dropout(args.dropout_rate,  input_shape=(X.shape[1],)))
-model1.add(Dense(300,     activation = 'relu'))
+model1.add(Dense(300,     activation = 'relu', use_bias=True, kernel_regularizer=WeightsOrthogonalityConstraint(300, weightage=1., axis=0))) 
 model1.add(Dense(50,      activation = 'linear', name = "bottleneck1"))
 model1.add(Dense(300,     activation = 'relu'))
 model1.add(Dense(X.shape[1],   activation = 'relu'))
@@ -71,8 +93,8 @@ plt.xlabel('Epoch')
 plt.legend(['Train', 'Validate'], loc='upper right')
 plt.show()
 #Prediction on domainA
-encoder = Model(model1.input, model1.get_layer('bottleneck1').output)
-bottleneck_representation1 = encoder.predict(X)
+encoder1 = Model(model1.input, model1.get_layer('bottleneck1').output)
+bottleneck_representation1 = encoder1.predict(X)
 # Saving output of domainA
 domainA_Latent =pd.DataFrame(bottleneck_representation1)
 domainA_Latent.to_csv(args.output_file1,sep=',')
@@ -87,7 +109,7 @@ Y = pd.read_csv(args.input_file2,sep=',', index_col=0).transpose()
 # Model2
 model2 = Sequential()
 model2.add(Dropout(args.dropout_rate,  input_shape=(Y.shape[1],)))
-model2.add(Dense(300,     activation = 'relu'))
+model2.add(Dense(300,     activation = 'relu', use_bias=True, kernel_regularizer=WeightsOrthogonalityConstraint(300, weightage=1., axis=0))))
 model2.add(Dense(50,      activation = 'linear', name = "bottleneck2"))
 model2.add(Dense(300,     activation = 'relu'))
 model2.add(Dense(Y.shape[1],   activation = 'relu'))
@@ -105,8 +127,8 @@ plt.xlabel('Epoch')
 plt.legend(['Train', 'Validate'], loc='upper right')
 plt.show()
 #Prediction on domainB
-encoder = Model(model2.input, model2.get_layer('bottleneck2').output)
-bottleneck_representation2 = encoder.predict(Y)
+encoder2 = Model(model2.input, model2.get_layer('bottleneck2').output)
+bottleneck_representation2 = encoder2.predict(Y)
 # Saving output of domainB
 domainB_Latent =pd.DataFrame(bottleneck_representation2)
 domainB_Latent.to_csv(args.output_file2,sep=',')
