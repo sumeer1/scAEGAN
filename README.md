@@ -84,7 +84,7 @@ python cGANtrain.py --data_path <Specifies the folder path to the training and t
                     --save_path <Specifies the folder path where the output from the cGAN in the csv format will be saved> \
                     --input_shape <Specifies the shape of the input, default=50> \
                     --batch_size <Specifies the batch size, default=4> \
-                    --epochs <Specifies the number of epochs for training cGAN, default=200>
+                    --epochs <Specifies the number of epochs for training cGAN, default=400>
 ```
 
  Running Example
