@@ -12,16 +12,14 @@ os.environ['KERAS_BACKEND'] = 'tensorflow'
 import numpy as np
 import pandas as pd
 import matplotlib as mpl
-from sklearn.manifold import TSNE
 from keras.layers import Input, Dense, Dropout
 from keras.layers.merge import concatenate
+from keras import backend as K
 from keras.models import Model
 from keras.utils import plot_model
 import matplotlib.pyplot as plt
-from sklearn.manifold import TSNE
 from keras.optimizers import Adam
 from keras.constraints import UnitNorm, Constraint
-from sklearn.decomposition import PCA
 from keras.models import Sequential, Model
 from keras import regularizers
 from keras.callbacks import EarlyStopping
