@@ -109,7 +109,7 @@ Y = pd.read_csv(args.input_file2,sep=',', index_col=0).transpose()
 # Model2
 model2 = Sequential()
 model2.add(Dropout(args.dropout_rate,  input_shape=(Y.shape[1],)))
-model2.add(Dense(300,     activation = 'relu', use_bias=True, kernel_regularizer=WeightsOrthogonalityConstraint(300, weightage=1., axis=0))))
+model2.add(Dense(300,     activation = 'relu', use_bias=True, kernel_regularizer=WeightsOrthogonalityConstraint(300, weightage=1., axis=0)))
 model2.add(Dense(50,      activation = 'linear', name = "bottleneck2"))
 model2.add(Dense(300,     activation = 'relu'))
 model2.add(Dense(Y.shape[1],   activation = 'sigmoid'))
