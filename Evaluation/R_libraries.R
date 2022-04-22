@@ -3,7 +3,7 @@
 pkgLoad <- function( packages = "favourites" ) {
 
     if( length( packages ) == 1L && packages == "favourites" ) {
-        packages <- c( "ggplot2", "Seurat", "tidyverse", "cowplot", "pdfCluster", "pheatmap", "cluster", "Rtsne", "umap", "e1071"
+        packages <- c( "ggplot2", "lmtest", "igraph", "Seurat", "tidyverse", "cowplot", "pdfCluster", "pheatmap", "cluster", "Rtsne", "umap", "e1071"
         )
     }
 
@@ -33,3 +33,5 @@ pkgLoad <- function( packages = "favourites" ) {
     }
 }
 pkgLoad("favourites")
+
+
