@@ -34,4 +34,5 @@ pkgLoad <- function( packages = "favourites" ) {
 }
 pkgLoad("favourites")
 
-
+install.packages("remotes")
+remotes::install_github("ramhiser/clusteval")
