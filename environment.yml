@@ -11,7 +11,6 @@ dependencies:
  - keras=2.1.5
  - python
  - pandas
- - scikit-learn
  - matplotlib
  - umap-learn
 
