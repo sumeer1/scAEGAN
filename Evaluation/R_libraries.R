@@ -21,7 +21,7 @@ pkgLoad <- function( packages = "favourites" ) {
     if( length( packagestoinstall) > 0L ) {
 	if (!requireNamespace("BiocManager", quietly = TRUE))
     	install.packages("BiocManager")
-	BiocManager::install(packagestoinstall_2 )	
+	BiocManager::install(packagestoinstall)	
     } else {
         print( "All requested packages from BIOCONDUCTOR already installed" )
     }
